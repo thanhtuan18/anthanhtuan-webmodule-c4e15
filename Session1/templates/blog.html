@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>blog</title>
+  </head>
+  <body>
+    <h1>{{ article_title }}</h1> <!-- Jinja2 -->
+    {% for post in posts %}  <!-- Jinja2 -->
+      <p>{{ post.content }}: <i>{{ post.author }}</i></p>
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,1161 @@
+b'\r
+\r
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\r
+\r
+<html xmlns="http://www.w3.org/1999/xhtml">\r
+<head><link href="App_Themes/Default/Scripts/magnific-popup/magnific-popup.css" type="text/css" rel="stylesheet" /><title>\r
+\tHOSE - CTCP ch\xe1\xbb\xa9ng kho\xc3\xa1n S\xc3\xa0i G\xc3\xb2n - B\xe1\xba\xa3ng gi\xc3\xa1 tr\xe1\xbb\xb1c tuy\xe1\xba\xbfn\r
+</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    \r
+    <script src="App_Themes/Default/Scripts/jquery-1.8.3.js" type="text/javascript"></script>\r
+    <script src="App_Themes/Default/Scripts/jscolor.js" type="text/javascript"></script>\r
+    <script src="App_Themes/Default/Scripts/StartChannel.js?v=10" type="text/javascript"></script>\r
+    <script src="App_Themes/Default/Scripts/tabcontent.js" type="text/javascript"></script>\r
+    <script src="App_Themes/Default/Scripts/jsxcompressor.min.js" type="text/javascript"></script>\r
+\r
+    <script type="text/javascript">\r
+        HoseInitIncludes();\r
+    </script>        \r
+    <script type="text/javascript" language="javascript">\r
+        cookiePrefix = "SSI.HOSE";\r
+        (function () {\r
+            LoadStyle();\r
+        } ());\r
+        $(document).ready(function () {\r
+            \r
+            // hide #back-top first\r
+            $("#toTop").hide();\r
+            // fade in #back-top\r
+            $(function () {\r
+                $(window).scroll(function () {\r
+                    if (this.tableType == 0) {\r
+                        if ($(this).scrollTop() > 100) {\r
+                            $(\'#toTop\').fadeIn();\r
+                        } else {\r
+                            $(\'#toTop\').fadeOut();\r
+                        }\r
+                    }\r
+                    else {\r
+                        $("#toTop").hide();\r
+                    }\r
+                });\r
+                // scroll body to 0px on click\r
+                $(\'#toTop a\').click(function () {\r
+                    $(\'body,html\').animate({\r
+                        scrollTop: 0\r
+                    }, 800);\r
+                    return false;\r
+                });\r
+            });\r
+\r
+            numTabs = $(".tabbed-box .tabsindex li a").length;\r
+            $(".tabbed-box .tabsindex li a").click(function () {\r
+                openTab($(this)); return false;\r
+            });\r
+            $(".tabbed-box").mouseover(function () {\r
+                //if (!isRotate) clearInterval(autoRotate);\r
+            })\r
+            .mouseout(function () {\r
+                //if (isRotate) autoRotate = setInterval("rotateTabs()", rotateSpeed);\r
+            });\r
+\r
+            $(".tabbed-box .tabsindex li a:eq(" + currentTab + ")").click()\r
+            $(".tabbed-box").mouseout();\r
+        });\r
+        function GetData() {            \r
+            LoadCommon();\r
+            GetDataHoseStockList();           \r
+            GetMarketAllIndex(0);\r
+            GetDataHoseQuoteInit();\r
+            CreateChart();\r
+            GetStatusBasePrice(1);\r
+            \r
+            //Call at specific time for overnight app\r
+            CallFuncAtTimes(GetDataHoseQuoteInit, 7, 45, 8, 20);\r
+            CallFuncAtTimes(CreateChart, 8, 20, 9, 00);\r
+            CallFuncAtTimes(function () { GetStatusBasePrice(1); }, 8, 20, 9, 00);\r
+            CallFuncAtTimes(GetDataHoseStockList, 14, 46, 14, 50);\r
+            CallFuncAtTimes(GetDataHoseQuoteInit, 14, 46, 14, 50);\r
+            CallFuncAtTimes(function () { GetStatusBasePrice(1); }, 14, 46, 14, 50);\r
+            CallFuncAtTimes(GetHosePTInit, 7, 45, 8, 20);\r
+        }\r
+    </script>\r
+</head>\r
+<body class="body" onscroll="OnScroll()" onload="GetData()" onkeyup="KeyPress(event)" style = "margin-top:0; margin-left: 0; margin-right:0;">\r
+    <form name="form1" method="post" action="" id="form1">\r
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjU5NjY3MTU3ZGTbNGDeyGr5uT+9y+VQY6oLrYLAYeWGjx7kr2TLkdQ5xw==" />\r
+\r
+\r
+<script src="/ScriptResource.axd?d=vRmbAmIlK4U6fl_2utIaXPwq3GEq-4aa32E3bs1M8oIi7fll1qyvbi2i6Y_ecze9RE8qs8gKpJCkLCIWemXQ8Dv-uI5V6x78mGjVRoAW2YDchFHmY3Aahe0vqV4Kj86a4f-er0P66NmypwMcAvcv_aLNLvbdrtA7oYGroM7Z4H8ufuPlwNkFXc4LJDqE3LVd0&amp;t=ffffffff940d030f" type="text/javascript"></script>\r
+<script type="text/javascript">\r
+//<![CDATA[\r
+if (typeof(Sys) === \'undefined\') throw new Error(\'ASP.NET Ajax client-side framework failed to load.\');\r
+//]]>\r
+</script>\r
+\r
+<script src="App_Themes/Default/Scripts/AjaxWebService.js" type="text/javascript"></script>\r
+<script src="AjaxWebService.asmx/jsdebug" type="text/javascript"></script>\r
+    <script type="text/javascript">\r
+        window.onkeyup = KeyPress;\r
+    </script>\r
+    <center>\r
+    <div id="divContainer">\r
+        <table width="100%" border = "0" cellpadding="0" cellspacing="0">\r
+        <tr>\r
+            <td>\r
+                <div id ="container">\r
+                    <div id="global_nav_hat" class ="nav_hat">\r
+                        <div class="item bbg active">\r
+                            <a id = "tabHose" href = "#">B\xe1\xba\xa3ng gi\xc3\xa1 HOSE</a>\r
+                        </div>\r
+                        <div class="item">\r
+                            <a id = "tabHnx" href = "Hnx.aspx" target="_blank">B\xe1\xba\xa3ng gi\xc3\xa1 HNX</a>\r
+                        </div>\r
+                        <div class="item">\r
+                            <a id = "tabUpcom" href = "Upcom.aspx" target="_blank">B\xe1\xba\xa3ng gi\xc3\xa1 UPCOM</a>\r
+                        </div>\r
+                        <div class="item">\r
+                            <a id = "tabHose30" href = "Hose30.aspx" target="_blank">B\xe1\xba\xa3ng gi\xc3\xa1 VN 30</a>\r
+                        </div>\r
+                        <div class="item">\r
+                            <a id = "tabHnx30" href = "Hnx30.aspx" target="_blank">B\xe1\xba\xa3ng gi\xc3\xa1 HNX 30</a>\r
+                        </div>\r
+                        <div class="item">\r
+                            <a id = "tabUpcomPre" href = "UpcomPre.aspx">B\xe1\xba\xa3ng gi\xc3\xa1 UPCOM PREMIUM</a>\r
+                        </div>\r
+                                    <div class="item">\r
+                                        <a id="tabFuture" href="Future.aspx" target="_blank">H\xe1\xbb\xa3p \xc4\x91\xe1\xbb\x93ng t\xc6\xb0\xc6\xa1ng lai</a>\r
+                                    </div>\r
+                        <div class="item">\r
+                            <a id = "tabPutThrough" href = "javascript:TogglePutThrough()">Giao d\xe1\xbb\x8bch th\xe1\xbb\x8fa thu\xe1\xba\xadn</a>\r
+                        </div>\r
+                        <div class="item">\r
+                            <a id = "tabOption" href = "javascript:ShowOption()">T\xc3\xb9y ch\xe1\xbb\x8dn</a>\r
+                        </div>\r
+                        <div class="item" style="display: none;">\r
+                            <a id="tabChooseColor" href="javascript:ShowChooseColor()">C\xe1\xba\xa5u h\xc3\xacnh</a>\r
+                        </div>\r
+                                                                        \r
+                        <div class = "lang">\r
+                            <a title = "English" href = "javascript: setLanguage(\'en-US\');">\r
+                                <img width = "24" height = "15" alt = "en" src = "App_Themes/Default/Images/en-US.gif" />\r
+                            </a>\r
+                            &nbsp\r
+                            <a title = "Vietnamese" href = "javascript: setLanguage(\'vi-VN\');">\r
+                                <img width = "24" height = "15" alt = "en" src = "App_Themes/Default/Images/vi-VN.gif" />\r
+                            </a>\r
+                        </div>\r
+                        <div id = "divClock" style= "padding-right: 5px; margin-right: 0px; margin-top: 3px;">00:00:00</div> \r
+                    </div>\r
+                </div>\r
+            </td>\r
+        </tr>\r
+        <tr>\r
+            <td align="center" width="100%">\r
+                <div id ="Market" class ="divMarket">\r
+                    <table cellpadding="0" cellspacing="0" width="100%" border = "0">\r
+                    <tr>\r
+                        <td>\r
+                            <table width = "100%" cellpadding="0" cellspacing="0" border = "0">\r
+                            <tr>\r
+                                <td id = "tdMarketHose" style = "width: 20%">                                   \r
+                                    <table width="99%" border = "0" cellpadding="0" cellspacing="0">\r
+                                        <tr>\r
+                                            <td align ="center">\r
+                                            <div id ="divChartHose" style="height: 125px; width: 250px"></div>                                            \r
+                                            </td>\r
+                                        </tr>\r
+                                        <tr>\r
+                                            <td class="MktIndex">VN INDEX</td>\r
+                                        </tr>\r
+                                    </table>\r
+                                </td>\r
+                                <td id = "tdMarketHnx" style = "width: 20%">\r
+                                    <table width="99%" border = "0" cellpadding="0" cellspacing="0">\r
+                                        <tr>\r
+                                            <td align ="center">\r
+                                            <div id ="divChartHnx" style="height: 125px; width: 250px"></div>                                            \r
+                                            </td>\r
+                                        </tr>\r
+                                        <tr>\r
+                                            <td class="MktIndex">HNX INDEX</td>\r
+                                        </tr>\r
+                                    </table>\r
+                                </td>\r
+                                <td id = "tdMarketIndex" align="left" valign="top" style = "width: 53%">                                           \r
+                                    <div id="divMarketIndex">                                                            \r
+                                                            <div class="tabbed-box">\r
+                                                                <ul class="tabsul tabsindex">\r
+                                                                    <li><a href="#">Ch\xe1\xbb\x89 s\xe1\xbb\x91 ch\xc3\xadnh</a></li>\r
+                                                                    <li><a href="#">HSX-ch\xe1\xbb\x89 s\xe1\xbb\x91 kh\xc3\xa1c</a></li>\r
+                                                                    <li><a href="#">HSX-TRI</a></li>\r
+                                                                    <li><a href="#">HSX-ch\xe1\xbb\x89 s\xe1\xbb\x91 ng\xc3\xa0nh</a></li>\r
+                                                                </ul>\r
+                                                                <div class="tabbed-content">                                                                    \r
+                                                                    <table id="tableIndex" cellpadding="0" cellspacing="2" width="100%">\r
+                                                                        <thead id="Thead3">\r
+                                                                            <tr id ="trHeader1">\r
+                                                                                <td class="MktHeader" style="width: 10%"></td>\r
+                                                                                <td id="headerIndex" class="MktHeader" style="width: 6%; text-align: right" nowrap="nowrap">Ch\xe1\xbb\x89 s\xe1\xbb\x91</td>\r
+                                                                                <td id="headerChange" class="MktHeader" style="width: 12%" nowrap="nowrap">% Thay \xc4\x91\xe1\xbb\x95i</td>\r
+                                                                                <td id="headerVolumn" class="MktHeader" style="width: 10%" nowrap="nowrap">KLGD</td>\r
+                                                                                <td id="headerValue" class="MktHeader" style="width: 10%" nowrap="nowrap">GTGD</td>\r
+                                                                                <td id="headerUpDown" class="MktHeader" colspan="3" style="width: 15%" nowrap="nowrap">CK T\xc4\x83ng/Gi\xe1\xba\xa3m</td>\r
+                                                                            </tr>\r
+                                                                        </thead>\r
+                                                                        <tbody>\r
+                                                                            <tr id ="trHOSE">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VN-INDEX</td>\r
+                                                                                <td id="tdHoseVnIndex" align="right" nowrap="nowrap"></td>\r
+                                                                                <td id="tdHoseChangeIndex" align="center" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' id="tdHoseTotalQtty" align="center" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdHoseTotalValue" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHoseAdvances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHoseNoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHoseDeclines" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trHOSE30">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VN30-INDEX</td>\r
+                                                                                <td align="right" id="tdHose30VnIndex" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="tdHose30ChangeIndex" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="tdHose30TotalQtty" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdHose30TotalValue" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHose30Advances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHose30NoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHose30Declines" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trHNX">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">HNX-INDEX</td>\r
+                                                                                <td align="right" id="tdHnxIndex" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="tdHnxChangeIndex" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="tdHnxTotalQtty" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdHnxTotalValue" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHnxAdvances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHnxNoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHnxDeclines" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trHNX30">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">HNX30-INDEX</td>\r
+                                                                                <td align="right" id="tdHnx30Index" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="tdHnx30ChangeIndex" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="tdHnx30TotalQtty" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdHnx30TotalValue"></td>\r
+                                                                                <td align="left" id="tdHnx30Advances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHnx30NoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHnx30Declines" nowrap="nowrap"></td>\r
+                                                                            </tr>                                                                            \r
+                                                                            <tr id ="trUPCOM">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">UPCOM-INDEX</td>\r
+                                                                                <td align="right" id="tdUpcomIndex" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="tdUpcomChangeIndex" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="tdUpcomTotalQtty" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdUpcomTotalValue" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdUpcomAdvances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdUpcomNoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdUpcomDeclines" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trVNXALLSHARE">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VNX-ALLSHARE</td>\r
+                                                                                <td align="right" id="tdVnxAllShareIndex" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="tdVnxAllShareChangeIndex" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="tdVnxAllShareTotalQtty" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdVnxAllShareTotalValue" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdVnxAllShareAdvances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdVnxAllShareNoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdVnxAllShareDeclines" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                        </tbody>\r
+                                                                    </table>                                                                    \r
+                                                                </div>                                                                    \r
+                                                                <div class ="tabbed-content">                                                                \r
+                                                                    <table id="table1" cellpadding="0" cellspacing="2" width="100%">\r
+                                                                        <thead id="Thead5">\r
+                                                                            <tr id ="trHeader2">\r
+                                                                                <td class="MktHeader" style="width: 10%"></td>\r
+                                                                                <td id="Td42" class="MktHeader" style="width: 6%; text-align: right" nowrap="nowrap">Ch\xe1\xbb\x89 s\xe1\xbb\x91</td>\r
+                                                                                <td id="Td43" class="MktHeader" style="width: 12%" nowrap="nowrap">% Thay \xc4\x91\xe1\xbb\x95i</td>\r
+                                                                                <td id="Td44" class="MktHeader" style="width: 10%" nowrap="nowrap">KLGD</td>\r
+                                                                                <td id="Td45" class="MktHeader" style="width: 10%" nowrap="nowrap">GTGD</td>\r
+                                                                                <td id="Td46" class="MktHeader" colspan="3" style="width: 15%" nowrap="nowrap">CK T\xc4\x83ng/Gi\xe1\xba\xa3m</td>\r
+                                                                            </tr>\r
+                                                                        </thead>\r
+                                                                        <tbody>\r
+                                                                            <tr id ="trHOSE100">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">HSX-100</td>\r
+                                                                                <td align="right" id="tdHose100Index" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="tdHose100ChangeIndex" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="tdHose100TotalQtty" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="tdHose100TotalValue" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHose100Advances" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHose100NoChange" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="tdHose100Declines" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trHOSEALLSHARE">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">HSX-ALLSHARE</td>\r
+                                                                                <td align="right" id="td14" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td15" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="td16" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="td17"></td>\r
+                                                                                <td align="left" id="td18" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td19" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td20" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trHOSEMIDCAP">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">HSX-MIDCAP</td>\r
+                                                                                <td id="td21" align="right" nowrap="nowrap"></td>\r
+                                                                                <td id="td22" align="center" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' id="td23" align="center" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="td24" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td25" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td26" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td27" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trHOSESMALLCAP">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">HSX-SMALLCAP</td>\r
+                                                                                <td align="right" id="td28" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td29" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktVolume\' align="center" id="td30" nowrap="nowrap"></td>\r
+                                                                                <td class=\'MktValue\' align="center" id="td31" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td32" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td33" nowrap="nowrap"></td>\r
+                                                                                <td align="left" id="td34" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                        </tbody>\r
+                                                                    </table>\r
+                                                                </div>  \r
+                                                                <div class ="tabbed-content">                                                                \r
+                                                                    <table id="table2" cellpadding="0" cellspacing="2" width="100%">\r
+                                                                        <thead id="Thead6">\r
+                                                                            <tr id ="trHeader3">\r
+                                                                                <td class="MktHeader" style="width: 10%"></td>\r
+                                                                                <td class="MktHeader" style="width: 6%; text-align: right" nowrap="nowrap">Ch\xe1\xbb\x89 s\xe1\xbb\x91</td>\r
+                                                                                <td class="MktHeader" style="width: 6%; text-align: right" nowrap="nowrap">Ch\xe1\xbb\x89 s\xe1\xbb\x91 T-1</td>\r
+                                                                                <td class="MktHeader" style="width: 12%" nowrap="nowrap">% Thay \xc4\x91\xe1\xbb\x95i</td>\r
+                                                                            </tr>\r
+                                                                        </thead>\r
+                                                                        <tbody>\r
+                                                                            <tr id ="trVNALLTRI">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VNALLSHARE TRI</td>\r
+                                                                                <td align="right" id="td52" nowrap="nowrap"></td>\r
+                                                                                <td align="right" id="td6" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td53" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trVN30TRI">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VN30 TRI</td>\r
+                                                                                <td align="right" id="td7" nowrap="nowrap"></td>\r
+                                                                                <td align="right" id="td8" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td9" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trVN100TRI">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VN100 TRI</td>\r
+                                                                                <td align="right" id="td10" nowrap="nowrap"></td>\r
+                                                                                <td align="right" id="td11" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td12" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trVNMIDCAPTRI">\r
+                                                                                <td class="MktIndex" nowrap="nowrap">VNMIDCAP TRI</td>\r
+                                                                                <td align="right" id="td13" nowrap="nowrap"></td>\r
+                                                                                <td align="right" id="td49" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td50" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                            <tr id ="trVNSMALLTRI">\r
+                                                                               <td class="MktIndex" nowrap="nowrap">VNSMALLCAP TRI</td>\r
+                                                                                <td align="right" id="td51" nowrap="nowrap"></td>\r
+                                                                                <td align="right" id="td54" nowrap="nowrap"></td>\r
+                                                                                <td align="center" id="td55" nowrap="nowrap"></td>\r
+                                                                            </tr>\r
+                                                                        </tbody>\r
+                                                                    </table>\r
+                                                                </div>\r
+                                                                <div class ="tabbed-content" id="GICSTab" >\r
+                                                                    <div style="height: 92px;">\r
+                                                                        <table id="tableGICSHeader" cellpadding="0" cellspacing="2" width="100%">\r
+                                                                        <thead id="Thead7">\r
+                                                                            <tr id ="trHeader4">\r
+                                                                                <td class="MktHeader" style="width: 10%"></td>\r
+                                                                                <td id="Td61" class="MktHeader" style="width: 6%; text-align: right" nowrap="nowrap">Ch\xe1\xbb\x89 s\xe1\xbb\x91</td>\r
+                                                                                <td id="Td62" class="MktHeader" style="width: 12%" nowrap="nowrap">% Thay \xc4\x91\xe1\xbb\x95i</td>\r
+                                                                                <td id="Td63" class="MktHeader" style="width: 10%" nowrap="nowrap">KLGD</td>\r
+                                                                                <td id="Td64" class="MktHeader" style="width: 10%" nowrap="nowrap">GTGD</td>\r
+                                                                                <td id="Td65" class="MktHeader" colspan="3" style="width: 15%" nowrap="nowrap">CK T\xc4\x83ng/Gi\xe1\xba\xa3m</td>\r
+                                                                            </tr>\r
+                                                                        </thead>\r
+                                                                    </table>\r
+                                                                    <div id="divGICS" class="divScroll" style="height: 100%;">\r
+                                                                        <table id="tableGICS" cellpadding="0" cellspacing="2" width="100%">\r
+                                                                            <tbody>\r
+                                                                                <tr id ="trVNFIN">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap" style="width: 10%">HSX-FIN</td>\r
+                                                                                    <td align="right" id="td48" nowrap="nowrap" style="width: 6%; text-align: right" ></td>\r
+                                                                                    <td align="center" id="td56" nowrap="nowrap" style="width: 12%"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td57" nowrap="nowrap" style="width: 10%"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td58" nowrap="nowrap" style="width: 10%"></td>\r
+                                                                                    <td align="left" id="td59" nowrap="nowrap" style="width: 5%"></td>\r
+                                                                                    <td align="left" id="td60" nowrap="nowrap" style="width: 5%"></td>\r
+                                                                                    <td align="left" id="td66" nowrap="nowrap" style="width: 5%"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNMAT">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-MAT</td>\r
+                                                                                    <td align="right" id="td67" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td68" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td69" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td70" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td71" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td72" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td73" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNIND">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-IND</td>\r
+                                                                                    <td align="right" id="td114" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td115" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td116" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td117" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td118" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td119" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td120" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNCONS">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-CONS</td>\r
+                                                                                    <td align="right" id="td74" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td75" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td76" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td77" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td78" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td79" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td80" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNCOND">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-COND</td>\r
+                                                                                    <td align="right" id="td81" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td82" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td83" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td84" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td85" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td86" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td87" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNHEAL">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-HEAL</td>\r
+                                                                                    <td align="right" id="td88" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td89" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td90" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td91" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td92" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td93" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td94" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNENE">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-ENE</td>\r
+                                                                                    <td align="right" id="td95" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td96" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td97" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td98" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td99" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td100" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td101" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNUTI">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-UTI</td>\r
+                                                                                    <td align="right" id="td102" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td103" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td104" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td105" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td106" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td107" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td108" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNREAL">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-REAL</td>\r
+                                                                                    <td align="right" id="td109" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td110" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td111" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td112" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td113" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td121" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td122" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                                <tr id ="trVNIT">\r
+                                                                                    <td class="MktIndex" nowrap="nowrap">HSX-IT</td>\r
+                                                                                    <td align="right" id="td123" nowrap="nowrap"></td>\r
+                                                                                    <td align="center" id="td124" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktVolume\' align="center" id="td125" nowrap="nowrap"></td>\r
+                                                                                    <td class=\'MktValue\' align="center" id="td126" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td127" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td128" nowrap="nowrap"></td>\r
+                                                                                    <td align="left" id="td129" nowrap="nowrap"></td>\r
+                                                                                </tr>\r
+                                                                            </tbody>\r
+                                                                        </table>\r
+                                                                    </div>\r
+                                                                    </div>                                                                \r
+                                                                    \r
+                                                                </div>                       \r
+                                                            </div>\r
+                                                        </div>\r
+                                </td>\r
+                                <td style ="width: 70px" valign ="middle" align ="center">\r
+                                    <table width="99%" border = "0" cellpadding="0" cellspacing="0">\r
+                                        <tr><td align ="center"><img src="App_Themes/Default/Images/logo.png" /></td></tr>\r
+                                        <tr><td align ="center" class = "HOSE">HOSE</td></tr>\r
+                                        <tr><td align ="center" class = "MktStatus" id = "tdMarketState"></td></tr>\r
+                                    </table>\r
+                                </td>\r
+                            </tr>\r
+                            </table>\r
+                        </td>\r
+                    </tr>\r
+                    </table>\r
+                </div>            \r
+            </td>\r
+        </tr>\r
+        <tr>\r
+            <td align = "center" width="100%">\r
+                <div id ="divPutThrough" class = "divPutThrough" style = "display:none; height: 100%"></div>\r
+            </td>\r
+        </tr>      \r
+        <tr>\r
+            <td align="center" width="100%">\r
+                <div id="floatingHeader" style="display:none; position:fixed; top: 0px; left: 0px; width: 100%;">\r
+                    <table id="tableFloatingHeader" width="100%" class="tableQuote" border="0" cellpadding="0" cellspacing="1">\r
+                        <thead id="Thead1">\r
+                            <tr id="tr1" align="center" height="18">\r
+                                <td id = "tdFStockSymbol" class="tableH2 BorderRight BorderTop BorderBottom" rowspan="2" width="3%">CK</td>\r
+                                <!-- Basic 15%-->\r
+                                <td id = "tdFCeilingPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">Tr\xe1\xba\xa7n</td>\r
+                                <td id = "tdFFloorPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">S\xc3\xa0n</td>\r
+                                <td id = "tdFPriorPrice" class="tableH1 BorderRight BorderTop BorderBottom" rowspan="2" width="3.0%">TC</td>\r
+                                <!-- Bid-->\r
+                                <td id = "tdFBid" class="tableH2 BorderRight BorderTop" colspan="6">D\xc6\xb0 mua</td>\r
+                                <!--Matching-->\r
+                                <td id = "tdFMatching" class="tableH1 BorderRight BorderTop" colspan="3" width="11.3%">Kh\xe1\xbb\x9bp l\xe1\xbb\x87nh</td>\r
+                                <!-- Ask-->                    \r
+                                <td id = "tdFAsk" class="tableH2 BorderRight BorderTop" colspan="6">D\xc6\xb0 b\xc3\xa1n</td>\r
+                                <!-- High, Low, Avr, Total volume-->\r
+                                <td id = "tdFHighPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">Cao</td>\r
+                                <td id = "tdFLowPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">Th\xe1\xba\xa5p</td>\r
+                                <td id = "tdFPriceAvg" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">TB</td>\r
+                                <td id = "tdFTotalQtty" class="tableH1 BorderRight BorderTop BorderBottom" rowspan="2" width="3.8%">T\xe1\xbb\x95ng KL</td>\r
+\r
+                                <!--Price, Volumn Session 1, 2-->\r
+                                <td id = "tdFSession1Price" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3%" style = "display: none">Gi\xc3\xa1 P1</td>\r
+                                <td id = "tdFSession1Volumn" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%" style = "display: none">KL P1</td>\r
+                                <td id = "tdFSession2Price" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3%" style = "display: none">Gi\xc3\xa1 P2</td>\r
+                                <td id = "tdFSession2Volumn" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%" style = "display: none">KL P2</td>\r
+\r
+                                <!--foreigner buy, room-->\r
+                                <td id = "tdFForeignBuy" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%">NN Mua</td>         \r
+                                <td id = "tdFForeignSell" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%">NN B\xc3\xa1n</td>                       \r
+                                <td id ="tdFCurrentRoom" class=\'tableH2 BorderTop BorderBottom\' rowspan="2" width=\'4%\'>Room</td>\r
+                            </tr>\r
+                            <tr id="tr2" align="center" height="18">\r
+                                <!-- Bid-->\r
+                                <td id = "tdFBidV3" class="tableH2 BorderBottom" nowrap="nowrap">KL 3</td>\r
+                                <td id = "tdFBidP3" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 3</td>\r
+                                <td id = "tdFBidV2" class="tableH2 BorderBottom" nowrap="nowrap">KL 2</td>\r
+                                <td id = "tdFBidP2" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 2</td>\r
+                                <td id = "tdFBidV1" class="tableH2 BorderBottom" nowrap="nowrap">KL 1</td>\r
+                                <td id = "tdFBidP1" class="tableH2 BorderRight BorderBottom" nowrap="nowrap">Gi\xc3\xa1 1</td>\r
+                                <!--Matching-->\r
+                                <td id = "tdFMatchPrice" class="tableH1 BorderBottom" nowrap="nowrap">Gi\xc3\xa1</td>\r
+                                <td id = "tdFMatchQtty" class="tableH1 BorderBottom" nowrap="nowrap">KL</td>\r
+                                <td class="tableH1 BorderRight BorderBottom" nowrap="nowrap">+/-</td>\r
+                                <!-- Ask-->                    \r
+                                <td id = "tdFOfferP1" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 1</td>\r
+                                <td id = "tdFOfferV1" class="tableH2 BorderBottom" nowrap="nowrap">KL 1</td>\r
+                                <td id = "tdFOfferP2" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 2</td>\r
+                                <td id = "tdFOfferV2" class="tableH2 BorderBottom" nowrap="nowrap">KL 2</td>\r
+                                <td id = "tdFOfferP3" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 3</td>\r
+                                <td id = "tdFOfferV3" class="tableH2 BorderRight BorderBottom" nowrap="nowrap">KL 3</td>\r
+                            </tr>\r
+                        </thead>\r
+                    </table>\r
+                </div>            \r
+            </td>\r
+        </tr>\r
+        <tr>\r
+            <td align="center" width="100%">\r
+                <div id="divFixHeader" style="display:none; position:absolute">\r
+                <table id="tableFixedHeader" width="100%" class="tableQuote" border="0" \r
+                    cellpadding="0" cellspacing="1">\r
+                    <thead id="Thead4">\r
+                        <tr id="tr5" align="center" height="18">\r
+                            <td id = "tdFixStockSymbol" class="tableH2 BorderRight BorderTop BorderBottom" rowspan="2">CK</td>\r
+                            <!-- Basic 15%-->\r
+                            <td id = "tdFixCeilingPrice" class="tableH1 BorderTop BorderBottom" rowspan="2">Tr\xe1\xba\xa7n</td>\r
+                            <td id = "tdFixFloorPrice" class="tableH1 BorderTop BorderBottom" rowspan="2">S\xc3\xa0n</td>\r
+                            <td id = "tdFixPriorPrice" class="tableH1 BorderRight BorderTop BorderBottom" rowspan="2">TC</td>\r
+                            <!-- Bid-->\r
+                            <td id = "tdFixBid" class="tableH2 BorderRight BorderTop" colspan="6">D\xc6\xb0 mua</td>\r
+                            <!--Matching-->\r
+                            <td id = "tdFixMatching" class="tableH1 BorderRight BorderTop" colspan="3">Kh\xe1\xbb\x9bp l\xe1\xbb\x87nh</td>\r
+                            <!-- Ask-->                    \r
+                            <td id = "tdFixAsk" class="tableH2 BorderRight BorderTop" colspan="6">D\xc6\xb0 b\xc3\xa1n</td>\r
+                            <!-- High, Low, Avr, Total volume-->\r
+                            <td id = "tdFixHighPrice" class="tableH1 BorderTop BorderBottom" rowspan="2">Cao</td>\r
+                            <td id = "tdFixLowPrice" class="tableH1 BorderTop BorderBottom" rowspan="2">Th\xe1\xba\xa5p</td>\r
+                            <td id = "tdFixPriceAvg" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">TB</td>\r
+                            <td id = "tdFixTotalQtty" class="tableH1 BorderRight BorderTop BorderBottom" rowspan="2">T\xe1\xbb\x95ng KL</td>\r
+\r
+                            <!--Price, Volumn Session 1, 2-->\r
+                            <td id = "tdFixSession1Price" class="tableH2 BorderTop BorderBottom" rowspan="2" style = "display: none">Gi\xc3\xa1 P1</td>\r
+                            <td id = "tdFixSession1Volumn" class="tableH2 BorderTop BorderBottom" rowspan="2" style = "display: none">KL P1</td>\r
+                            <td id = "tdFixSession2Price" class="tableH2 BorderTop BorderBottom" rowspan="2" style = "display: none">Gi\xc3\xa1 P2</td>\r
+                            <td id = "tdFixSession2Volumn" class="tableH2 BorderTop BorderBottom" rowspan="2" style = "display: none">KL P2</td>\r
+\r
+                            <!--foreigner buy, room-->\r
+                            <td id = "tdFixForeignBuy" class="tableH2 BorderTop BorderBottom" rowspan="2">NN Mua</td>                                \r
+                            <td id = "tdFixForeignSell" class="tableH2 BorderTop BorderBottom" rowspan="2">NN B\xc3\xa1n</td>\r
+                            <td id ="tdFixCurrentRoom" class=\'tableH2 BorderTop BorderBottom\' rowspan="2">Room</td>\r
+                        </tr>\r
+                        <tr id="tr6" align="center" height="18">\r
+                            <!-- Bid-->\r
+                            <td id = "tdFixBidV3" class="tableH2 BorderBottom" nowrap="nowrap">KL 3</td>\r
+                            <td id = "tdFixBidP3" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 3</td>                    \r
+                            <td id = "tdFixBidV2" class="tableH2 BorderBottom" nowrap="nowrap">KL 2</td>\r
+                            <td id = "tdFixBidP2" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 2</td>                    \r
+                            <td id = "tdFixBidV1" class="tableH2 BorderBottom" nowrap="nowrap">KL 1</td>\r
+                            <td id = "tdFixBidP1" class="tableH2 BorderRight BorderBottom" nowrap="nowrap">Gi\xc3\xa1 1</td>                    \r
+                            <!--Matching-->\r
+                            <td id = "tdFixMatchPrice" class="tableH1 BorderBottom" nowrap="nowrap">Gi\xc3\xa1</td>\r
+                            <td id = "tdFixMatchQtty" class="tableH1 BorderBottom" nowrap="nowrap">KL</td>\r
+                            <td class="tableH1 BorderRight BorderBottom" nowrap="nowrap">+/-</td>                    \r
+                            <!-- Ask-->                    \r
+                            <td id = "tdFixOfferP1" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 1</td>\r
+                            <td id = "tdFixOfferV1" class="tableH2 BorderBottom" nowrap="nowrap">KL 1</td>\r
+                            <td id = "tdFixOfferP2" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 2</td>\r
+                            <td id = "tdFixOfferV2" class="tableH2 BorderBottom" nowrap="nowrap">KL 2</td>\r
+                            <td id = "tdFixOfferP3" class="tableH2 BorderBottom" nowrap="nowrap">Gi\xc3\xa1 3</td>\r
+                            <td id = "tdFixOfferV3" class="tableH2 BorderRight BorderBottom" nowrap="nowrap">KL 3</td>                \r
+                        </tr>\r
+                    </thead>\r
+                </table>\r
+                </div>\r
+                <div id ="divScroll" class = "divScroll" style = "height: 100%;">                    \r
+                    <table id="tableQuote" width="100%" style = "height: 100%" class="tableQuote" border="0" cellpadding="0" cellspacing="1">\r
+                        <thead id="Thead2">\r
+                            <tr id="tr3" align="center" height="18">\r
+                                <td id = "tdStockSymbol" class="tableH2 BorderRight BorderTop BorderBottom" rowspan="2" width="3%">CK</td>\r
+                                <!-- Basic 15%-->\r
+                                <td id = "tdCeilingPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">Tr\xe1\xba\xa7n</td>\r
+                                <td id = "tdFloorPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">S\xc3\xa0n</td>\r
+                                <td id = "tdPriorPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">TC</td>\r
+                                <!-- Bid-->\r
+                                <td id = "tdBid" class="tableH2 BorderRight BorderTop" colspan="6">D\xc6\xb0 mua</td>\r
+                                <!--Matching-->\r
+                                <td id = "tdMatching" class="tableH1 BorderRight BorderTop" colspan="3" width="11.3%">Kh\xe1\xbb\x9bp l\xe1\xbb\x87nh</td>\r
+                                <!-- Ask-->\r
+                                <td id = "tdAsk" class="tableH2 BorderRight BorderTop" colspan="6">D\xc6\xb0 b\xc3\xa1n</td>\r
+                                <!-- High, Low, Avr, Total volume-->\r
+                                <td id = "tdHighPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">Cao</td>\r
+                                <td id = "tdLowPrice" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">Th\xe1\xba\xa5p</td>\r
+                                <td id = "tdPriceAvg" class="tableH1 BorderTop BorderBottom" rowspan="2" width="3.0%">TB</td>\r
+                                <td id = "tdTotalQtty" class="tableH1 BorderRight BorderTop BorderBottom" rowspan="2" width="3.8%">T\xe1\xbb\x95ng KL</td>\r
+                                <!--Price, Volumn Session 1, 2-->\r
+                                <td id = "tdSession1Price" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3%" style = "display: none">Gi\xc3\xa1 P1</td>\r
+                                <td id = "tdSession1Volumn" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%" style = "display: none">KL P1</td>\r
+                                <td id = "tdSession2Price" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3%" style = "display: none">Gi\xc3\xa1 P2</td>\r
+                                <td id = "tdSession2Volumn" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%" style = "display: none">KL P2</td>\r
+                                <!--foreigner buy, room-->\r
+                                <td id = "tdForeignBuy" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%">NN Mua</td>    \r
+                                <td id = "tdForeigSell" class="tableH2 BorderTop BorderBottom" rowspan="2" width="3.5%">NN B\xc3\xa1n</td>                          \r
+                                <td id ="tdCurrentRoom" class=\'tableH2 BorderTop BorderBottom\' rowspan="2" width=\'4%\'>Room</td>\r
+                            </tr>\r
+                            <tr id="tr4" align="center" height="18">\r
+                                <!-- Bid-->\r
+                                <td id = "tdBidV3" class="tableH2 BorderBottom" nowrap="nowrap" width="3.5%">KL 3</td>\r
+                                <td id = "tdBidP3" class="tableH2 BorderBottom" nowrap="nowrap" width="3.0%">Gi\xc3\xa1 3</td>                    \r
+                                <td id = "tdBidV2" class="tableH2 BorderBottom" nowrap="nowrap" width="3.5%">KL 2</td>\r
+                                <td id = "tdBidP2" class="tableH2 BorderBottom" nowrap="nowrap" width="3.0%">Gi\xc3\xa1 2</td>                    \r
+                                <td id = "tdBidV1" class="tableH2 BorderBottom" nowrap="nowrap" width="3.5%">KL 1</td>\r
+                                <td id = "tdBidP1" class="tableH2 BorderRight BorderBottom" nowrap="nowrap" width="3.0%">Gi\xc3\xa1 1</td>                    \r
+                                <!--Matching-->\r
+                                <td id = "tdMatchPrice" class="tableH1 BorderBottom" nowrap="nowrap" width="3.8%">Gi\xc3\xa1</td>\r
+                                <td id = "tdMatchQtty" class="tableH1 BorderBottom" nowrap="nowrap" width="3.5%">KL</td>\r
+                                <td class="tableH1 BorderRight BorderBottom" nowrap="nowrap" width="4%">+/-</td>                    \r
+                                <!-- Ask-->                    \r
+                                <td id = "tdOfferP1" class="tableH2 BorderBottom" nowrap="nowrap" width="3.0%">Gi\xc3\xa1 1</td>\r
+                                <td id = "tdOfferV1" class="tableH2 BorderBottom" nowrap="nowrap" width="3.5%">KL 1</td>\r
+                                <td id = "tdOfferP2" class="tableH2 BorderBottom" nowrap="nowrap" width="3.0%">Gi\xc3\xa1 2</td>\r
+                                <td id = "tdOfferV2" class="tableH2 BorderBottom" nowrap="nowrap" width="3.5%">KL 2</td>\r
+                                <td id = "tdOfferP3" class="tableH2 BorderBottom" nowrap="nowrap" width="3.0%">Gi\xc3\xa1 3</td>\r
+                                <td id = "tdOfferV3" class="tableH2 BorderRight BorderBottom" nowrap="nowrap" width="3.5%">KL 3</td>                \r
+                            </tr>\r
+                        </thead>\r
+                        <tbody>\r
+                        </tbody>\r
+                    </table>\r
+                </div>\r
+            </td>\r
+        </tr>\r
+        <tr>\r
+            <td align ="center">\r
+                <div id ="divPutThroughBottom" class = "divPutThrough" style = "display:none;"></div>\r
+            </td>\r
+        </tr>\r
+        <tr id = "trBlank">\r
+            <td style="height: 23px;"></td>\r
+        </tr>\r
+        <tr>\r
+            <td>\r
+                <div id = "divScrollFooter" class = "divfooter">\r
+                <table id="tableScrollFooter" width="100%" height="20px" class="CopyRight" cellpadding="0" border="0" cellspacing="1">\r
+                    <tr>\r
+                        <td style="padding-left: 2px;" align="left" valign="middle">                            \r
+                            <span id="spanDescription">Gi\xc3\xa1: x1000 Kh\xe1\xbb\x91i l\xc6\xb0\xe1\xbb\xa3ng: x10</span>\r
+                            \r
+                            <span id="spConnectStatus" style = "font-weight: bold;"></span>\r
+                        </td>            \r
+                        <td align = "center">\r
+                            \r
+                        </td>\r
+                        <td align="right" style="padding-left: 100px;" valign="middle">\r
+                            <span id="spanCopyright">\r
+                                Copyright \xc2\xa9 2013 by\r
+                                <a style="color:#FF0000;text-decoration:none;" href="http://www.ssi.com.vn" target="_blank">SAIGON SECURITIES INC.</a>\r
+                            </span>                                \r
+                        </td>\r
+                    </tr>\r
+                </table>\r
+                </div>\r
+            </td>\r
+        </tr>\r
+        </table>\r
+    </div>    \r
+    <div id = "divOption" class="divOption" style ="display: none"> \r
+    <div id="popup" class="popup">\r
+        <a href="javascript: CloseOption()">\r
+            <img src="App_Themes/Default/Images/close.png" width="15" height="15" style="position: absolute; border: none; top: 3px; right: 3px;">\r
+        </a>\r
+        <div class="content">\r
+            <table width="100%" cellpadding="0" cellspacing="1">\r
+            <tr style = "display: table-row;">\r
+                <td id = "tdfilter_abc"></td>\r
+            </tr>\r
+            <tr>\r
+                <td>\r
+                    <table width = "100%" cellpadding="0" cellspacing="1">\r
+                        <tr>\r
+                            <td align = "left" style = "width: 280px;"><label id = "lblEnterSymbol">Nh\xe1\xba\xadp c\xc3\xa1c m\xc3\xa3 CK c\xe1\xba\xa7n ch\xe1\xbb\x8dn (Vd: AAA,BBB,CCC)</label></td>\r
+                            <td align = "left" style = "width: 360px;">\r
+                                <input type ="text" id = "txtEnterSymbol" onkeypress="javascript: onKeyEnterSymbol();" style = "width: 350px; text-transform:uppercase;" />\r
+                            </td>\r
+                            <td align = "left">\r
+                                <a style = "width: 80px;" class ="btn btn-inverse" href = "javascript:AddSymbols();" class="Link"><span id = "spAddSymbol">Th\xc3\xaam M\xc3\xa3 CK</span></a>&nbsp&nbsp\r
+                                <a style = "width: 80px;" class ="btn btn-inverse" href = "javascript:RemoveSymbols();" class="Link"><span id = "spRemoveSymbol">Lo\xe1\xba\xa1i b\xe1\xbb\x8f M\xc3\xa3 CK</span></a>\r
+                            </td>\r
+                        </tr>\r
+                    </table>\r
+                </td>\r
+            </tr>\r
+            <tr>\r
+                <td>\r
+                    <div id = "ChooseSymbol"></div>\r
+                </td>\r
+            </tr>\r
+            <tr>\r
+                <td>\r
+                    <table width="100%" cellpadding="0" cellspacing="1">\r
+                        <tr>\r
+                            <td>\r
+                                <table width="100%" cellpadding="0" cellspacing="1">\r
+                                    <tr>\r
+                                        <td id = "tdTypeBoard" style = "font-weight: bold">Ki\xe1\xbb\x83u b\xe1\xba\xa3ng</td>\r
+                                        <td align = "left">\r
+                                            <select id = "selectTypeBoard" onchange="changeTypeBoard();">\r
+                                                <option value = "0">B\xc3\xacnh th\xc6\xb0\xe1\xbb\x9dng</option>\r
+                                                <option value = "1">Cu\xe1\xbb\x99n v\xc3\xb4 t\xe1\xba\xadn</option>\r
+                                                <option value = "2">Cu\xe1\xbb\x99n hai chi\xe1\xbb\x81u</option>\r
+                                                <option value = "3">L\xe1\xba\xadt trang</option>\r
+                                            </select>\r
+                                        </td>\r
+                                        <td id = "tdLineCount" align = "right">S\xe1\xbb\x91 d\xc3\xb2ng hi\xe1\xbb\x83n th\xe1\xbb\x8b (B\xe1\xba\xa3ng cu\xe1\xbb\x99n, l\xe1\xba\xadt trang)</td>\r
+                                        <td align = "left"><input type = "text" id = "txtLineCount" value = "20" style = "width: 30px;" /></td>\r
+                                        <td id = "tdScrollInterval" align = "right">\xc4\x90\xe1\xbb\x99 tr\xe1\xbb\x85 b\xe1\xba\xa3ng cu\xe1\xbb\x99n (mili gi\xc3\xa2y)</td>\r
+                                        <td align = "left"><input type = "text" id = "txtScrollInterval" value = "30" style = "width: 50px;" /></td>\r
+                                        <td id = "tdWaitingTime" align = "right">Th\xe1\xbb\x9di gian \xc4\x91\xe1\xbb\xa3i l\xe1\xba\xadt trang (mili gi\xc3\xa2y)</td>\r
+                                        <td align = "left"><input type = "text" id = "txtWaitingTime" value = "10000" style = "width: 60px;" /></td>\r
+                                    </tr>\r
+                                </table>\r
+                            </td>\r
+                        </tr>\r
+                        <tr>\r
+                            <td>                                \r
+                                <table width="850px" cellpadding="0" cellspacing="1">\r
+                                    <tr>\r
+                                        <td id = "tdExtraColumn" style = "width: 80px; font-weight: bold">Hi\xe1\xbb\x87n th\xe1\xbb\x8b c\xe1\xbb\x99t</td>\r
+                                        <td id = "tdExtraPriceHighest" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkPriceHigh"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'PriceHigh\')"><span id ="spPriceHigh">Cao nh\xe1\xba\xa5t</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraPriceLowest" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkPriceLow"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'PriceLow\')"><span id ="spPriceLow">Th\xe1\xba\xa5p nh\xe1\xba\xa5t</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraPriceAvg" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkPriceAvg"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'PriceAvg\')"><span id ="spPriceAvg">Gi\xc3\xa1 TB</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraTotalQtty" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkTotalQtty"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'TotalQtty\')"><span id ="spTotalQtty">T\xe1\xbb\x95ng KL</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraForeignBuy" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkForeignBuy"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'ForeignBuy\')"><span id ="spForeignBuy">NN Mua</span></a>\r
+                                        </td>    \r
+                                    </tr>\r
+                                    <tr>\r
+                                        <td style = "width: 80px"></td>                               \r
+                                        <td id = "tdExtraForeignSell" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkForeignSell"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'ForeignSell\')"><span id ="spForeignSell">NN B\xc3\xa1n</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraSession1Price" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkSession1Price"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'Session1Price\')"><span id ="spPriceSes1">Gi\xc3\xa1 phi\xc3\xaan 1</span></a>\r
+                                         </td>\r
+                                        <td id = "tdExtraSession1Volumn" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkSession1Volumn"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'Session1Volumn\')"><span id ="spVolumnSes1">KL phi\xc3\xaan 1</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraSession2Price" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkSession2Price"/>                                \r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'Session2Price\')"><span id ="spPriceSes2">Gi\xc3\xa1 phi\xc3\xaan 2</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraSession2Volumn" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkSession2Volumn"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'Session2Volumn\')"><span id ="spVolumnSes2">KL phi\xc3\xaan 2</span></a>\r
+                                        </td>\r
+                                        <td id = "tdExtraRoom" style = "width: 80px">\r
+                                            <input type ="checkbox" id ="chkRoom"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'Room\')"><span id ="spRoom">Room</span></a>\r
+                                        </td>\r
+                                    </tr>\r
+                                </table>                                \r
+                            </td>\r
+                        </tr>\r
+                        <tr>\r
+                            <td>\r
+                                <table width="850px" cellpadding="0" cellspacing="1">\r
+                                    <tr>\r
+                                        <td id = "tdFontStyle" style = "width: 80px; font-weight: bold">Ki\xe1\xbb\x83u ch\xe1\xbb\xaf</td>\r
+                                        <td>\r
+                                            <input type ="radio" id ="rbtFontNormal" name = "FontStyle"/>\r
+                                            <a class="Link" href = "javascript: SelectFontStyle(\'FontNormal\')"><span id ="spFontNormal">Font ch\xe1\xbb\xaf b\xc3\xacnh th\xc6\xb0\xe1\xbb\x9dng</span></a>\r
+                                        </td>\r
+                                        <td>\r
+                                            <input type ="radio" id ="rbtFontBoldHalf" name = "FontStyle"/>\r
+                                            <a class="Link" href = "javascript: SelectFontStyle(\'FontBoldHalf\')"><span id ="spFontBoldHalf">Font ch\xe1\xbb\xaf \xc4\x91\xe1\xba\xadm c\xc3\xa1c c\xe1\xbb\x99t ch\xc3\xadnh</span></a>\r
+                                        </td>\r
+                                        <td>\r
+                                            <input type ="radio" id ="rbtFontBoldAll" name = "FontStyle"/>\r
+                                            <a class="Link" href = "javascript: SelectFontStyle(\'FontBoldAll\')"><span id ="spFontBoldAll">Font ch\xe1\xbb\xaf \xc4\x91\xe1\xba\xadm</span></a>\r
+                                        </td>\r
+                                        <td align = "left">\r
+                                            <span id ="spFontSize">K\xc3\xadch th\xc6\xb0\xe1\xbb\x9bc ch\xe1\xbb\xaf</span>\r
+                                            <select id = "selectFontSize">\r
+                                                <option value = "8">8</option>\r
+                                                <option value = "9">9</option>\r
+                                                <option value = "10" selected>10</option>\r
+                                                <option value = "11">11</option>\r
+                                                <option value = "12">12</option>\r
+                                                <option value = "13">13</option>\r
+                                                <option value = "14">14</option>\r
+                                                <option value = "15">15</option>\r
+                                            </select>\r
+                                        </td>  \r
+                                    </tr>\r
+                                </table>\r
+                            </td>\r
+                        </tr>\r
+                        <tr>\r
+                            <td>\r
+                                <table width="100%" cellpadding="0" cellspacing="1">\r
+                                    <tr>                  \r
+                                        <td align = "left">\r
+                                            <span id ="spRowHeight">Chi\xe1\xbb\x81u cao d\xc3\xb2ng</span>\r
+                                            <input type = "text" id = "txtRowHeight" value = "21" style = "width: 40px;" />\r
+                                        </td>                                        \r
+                                        <td align = "left">\r
+                                            <span id ="spRowHeightPutThrough">Chi\xe1\xbb\x81u cao d\xc3\xb2ng th\xe1\xbb\x8fa thu\xe1\xba\xadn</span>\r
+                                            <input type = "text" id = "txtRowHeightPutThrough" value = "21" style = "width: 40px;" />\r
+                                        </td>\r
+                                        <td>\r
+                                            <input type ="checkbox" id ="chkVolumnAddCommas"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'VolumnAddCommas\')"><span id ="spVolumnAddCommas">D\xe1\xba\xa5u ph\xe1\xba\xa9y c\xe1\xbb\x99t KL</span></a>\r
+                                        </td>\r
+                                        <td>\r
+                                            <input type ="checkbox" id ="chkShowVolumeColor"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'ShowVolumeColor\')"><span id ="spShowVolumeColor">M\xc3\xa0u KL theo m\xc3\xa0u gi\xc3\xa1</span></a>\r
+                                        </td>\r
+                                        <td>\r
+                                            <input type ="checkbox" id ="chkTotalVolunmShortNumber"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'TotalVolunmShortNumber\')"><span id ="spTotalVolunmShortNumber">T\xe1\xbb\x95ng KL vi\xe1\xba\xbft t\xe1\xba\xaft</span></a>\r
+                                        </td>\r
+                                        <td>\r
+                                            <input type ="checkbox" id ="chkRoomShortNumber"/>\r
+                                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'RoomShortNumber\')"><span id ="spRoomShortNumber">Room vi\xe1\xba\xbft t\xe1\xba\xaft</span></a>\r
+                                        </td>\r
+                                    </tr>\r
+                                </table>\r
+                            </td>\r
+                        </tr>\r
+                        <tr>\r
+                            <td align ="left">\r
+                                <table width="100%" cellpadding="0" cellspacing="1">\r
+                                    <tr>\r
+                                        <td align = "left">  \r
+                                            <input type="checkbox" id="chkRotateTabIndex" onclick="javascript: checkRotateTabIndex(0)" />\r
+                                            <a class="Link" href="javascript: checkRotateTabIndex(1)">\r
+                                                <span id="Span10">L\xe1\xba\xadt tab ch\xe1\xbb\x89 s\xe1\xbb\x91 index </span>\r
+                                            </a>                                         \r
+                                            <input type ="checkbox" id ="chkPutThroughDisplayed" onclick="javascript: checkPutThrough(0)"/> \r
+                                            <a class="Link" href = "javascript: checkPutThrough(1)">\r
+                                                <span id = "spPutThrough">Hi\xe1\xbb\x83n th\xe1\xbb\x8b GDTT</span>\r
+                                            </a>\r
+                                            <select id = "selectPositionPutThrough">\r
+                                                <option value = "0">T\xc4\xa9nh ph\xc3\xada tr\xc3\xaan</option>\r
+                                                <option value = "1">Cu\xe1\xbb\x99n ph\xc3\xada d\xc6\xb0\xe1\xbb\x9bi</option>\r
+                                            </select>\r
+                                            <span id = "spHeightPutThrough">Chi\xe1\xbb\x81u cao (px)</span>\r
+                                            <input type = "text" id = "txtHeightPutThrough" value = "150" style = "width: 30px;" />\r
+                                            <span id = "spLineCountPT">S\xe1\xbb\x91 d\xc3\xb2ng hi\xe1\xbb\x83n th\xe1\xbb\x8b</span>\r
+                                            <input type = "text" id = "txtLineCountPT" value = "4" style = "width: 30px;" />\r
+                                        </td>\r
+                                        <td align ="right">\r
+                                            <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: SaveOption();"><span id = "spOK">L\xc6\xb0u l\xe1\xba\xa1i</span></a>&nbsp&nbsp\r
+                                            <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: CloseOption();"><span id = "spCancel">\xc4\x90\xc3\xb3ng</span></a>\r
+                                        </td>\r
+                                    </tr>\r
+                                </table>\r
+                            </td>\r
+                        </tr>\r
+                    </table>                    \r
+                </td>\r
+            </tr>\r
+        </table>\r
+        </div>\r
+    </div>    \r
+    </div>\r
+    <div id = "divChooseColor" class ="divOption" style = "display: none">\r
+        <div class="popup">\r
+            <a href="javascript: CloseChooseColor()">\r
+                <img src="App_Themes/Default/Images/close.png" width="15" height="15" style="position: absolute; border: none; top: 3px; right: 3px;">\r
+            </a>\r
+            <ul class="tabs" data-persist="true">\r
+                <li><a href="#view1">Ch\xe1\xbb\x8dn M\xc3\xa0u</a></li>\r
+                <li><a href="#view2">CK kh\xc3\xb4ng hi\xe1\xbb\x83n th\xe1\xbb\x8b</a></li>                \r
+            </ul>\r
+            <div class="tabcontents">\r
+                <div id="view1">\r
+                <table width="100%" cellpadding="1" cellspacing="2">\r
+                    <tr>\r
+                        <td><span id = "spBoardColor" style = "font-weight: bold">Ch\xe1\xbb\x8dn m\xc3\xa0u b\xe1\xba\xa3ng gi\xc3\xa1</span></td>\r
+                    </tr>\r
+                    <tr>\r
+                        <td>\r
+                        <div class = "symbol">\r
+                            <table width="100%" cellpadding="0" cellspacing="1">\r
+                                <tr>\r
+                                    <td id = "tdCeilColor">M\xc3\xa0u gi\xc3\xa1 tr\xe1\xba\xa7n</td>\r
+                                    <td align = "left"><input type = "text" id = "txtCeilColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdFloorColor">M\xc3\xa0u gi\xc3\xa1 s\xc3\xa0n</td>\r
+                                    <td align = "left"><input type = "text" id = "txtFloorColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdRefColor">M\xc3\xa0u gi\xc3\xa1 tham chi\xe1\xba\xbfu</td>\r
+                                    <td align = "left"><input type = "text" id = "txtRefColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                </tr>                    \r
+                                <tr>\r
+                                    <td id = "tdUpColor">M\xc3\xa0u t\xc4\x83ng gi\xc3\xa1</td>\r
+                                    <td align = "left"><input type = "text" id = "txtUpColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdDownColor">M\xc3\xa0u gi\xe1\xba\xa3m gi\xc3\xa1</td>\r
+                                    <td align = "left"><input type = "text" id = "txtDownColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdNoChangeColor">M\xc3\xa0u gi\xc3\xa1 kh\xc3\xb4ng thay \xc4\x91\xe1\xbb\x95i</td>\r
+                                    <td align = "left"><input type = "text" id = "txtNoChangeColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                </tr>\r
+                                <tr>\r
+                                    <td id = "tdVolumnColor">M\xc3\xa0u ch\xe1\xbb\xaf c\xe1\xbb\x99t KL</td>\r
+                                    <td align = "left"><input type = "text" id = "txtVolumnColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdSymbolColor">M\xc3\xa0u n\xe1\xbb\x81n c\xe1\xbb\x99t CK</td>\r
+                                    <td align = "left"><input type = "text" id = "txtSymbolColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "td1">M\xc3\xa0u n\xe1\xbb\x81n c\xe1\xbb\x99t CK \xc4\x91\xc6\xb0\xe1\xbb\xa3c ch\xe1\xbb\x8dn</td>\r
+                                    <td align = "left"><input type = "text" id = "txtSymbolColorSelected" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>                                    \r
+                                </tr>\r
+                                <tr>\r
+                                    <td id = "tdBackColor1">M\xc3\xa0u n\xe1\xbb\x81n c\xe1\xbb\x99t th\xe1\xbb\xa9 1(TC,Tr\xe1\xba\xa7n,S\xc3\xa0n,..)</td>\r
+                                    <td align = "left"><input type = "text" id = "txtBackColor1" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdBackColor2">M\xc3\xa0u n\xe1\xbb\x81n c\xe1\xbb\x99t th\xe1\xbb\xa9 2(3 Gi\xc3\xa1)</td>\r
+                                    <td align = "left"><input type = "text" id = "txtBackColor2" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+\r
+                                    <td id = "tdBackColor1Selected">M\xc3\xa0u n\xe1\xbb\x81n c\xe1\xbb\x99t th\xe1\xbb\xa9 1 \xc4\x91\xc6\xb0\xe1\xbb\xa3c ch\xe1\xbb\x8dn</td>\r
+                                    <td align = "left"><input type = "text" id = "txtBackColor1Selected" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>                                    \r
+                                </tr>\r
+                                <tr>\r
+                                    <td id = "tdBackColor2Selected">M\xc3\xa0u n\xe1\xbb\x81n c\xe1\xbb\x99t th\xe1\xbb\xa9 2 \xc4\x91\xc6\xb0\xe1\xbb\xa3c ch\xe1\xbb\x8dn</td>\r
+                                    <td align = "left"><input type = "text" id = "txtBackColor2Selected" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdHightLightCellColor">M\xc3\xa0u HightLight thay \xc4\x91\xe1\xbb\x95i</td>\r
+                                    <td align = "left"><input type = "text" id = "txtHightLightCellColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdtxtHightLightRowColor">M\xc3\xa0u HightLight di chuy\xe1\xbb\x83n chu\xe1\xbb\x99t</td>\r
+                                    <td align = "left"><input type = "text" id = "txtHightLightRowColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                </tr>\r
+                                <tr>\r
+                                    <td id = "td2">M\xc3\xa0u vi\xe1\xbb\x81n ng\xc4\x83n c\xc3\xa1ch CK l\xe1\xbb\xb1a ch\xe1\xbb\x8dn</td>\r
+                                    <td align = "left"><input type = "text" id = "txtBorderBottom" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    <td id = "tdStyleCss">Ch\xe1\xbb\x8dn t\xc3\xb4ng m\xc3\xa0u</td>\r
+                                    <td align = "left">\r
+                                        <select id = "selectStyleCss">\r
+                                            <option value = "Black">M\xc3\xa0u \xc4\x91en x\xc3\xa1m</option>\r
+                                            <option value = "Green">M\xc3\xa0u xanh \xc4\x91en</option>\r
+                                            <option value = "Silver">M\xc3\xa0u tr\xe1\xba\xafng b\xe1\xba\xa1c</option>\r
+                                        </select>\r
+                                    </td>\r
+                                </tr>\r
+                            </table>\r
+                            </div>\r
+                        </td>\r
+                    </tr>\r
+                    <tr>\r
+                        <td><span id = "spChartColor" style = "font-weight: bold">Ch\xe1\xbb\x8dn m\xc3\xa0u bi\xe1\xbb\x83u \xc4\x91\xe1\xbb\x93</span></td>\r
+                    </tr>\r
+                    <tr>\r
+                        <td>\r
+                            <div class = "symbol">\r
+                                <table width="100%" cellpadding="0" cellspacing="1">\r
+                                    <tr>\r
+                                        <td id = "tdChartBackColor">M\xc3\xa0u n\xe1\xbb\x81n bi\xe1\xbb\x83u \xc4\x91\xe1\xbb\x93</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartBackColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                        <td id = "tdChartxAxisColor">M\xc3\xa0u ch\xe1\xbb\x89 s\xe1\xbb\x91 tr\xe1\xbb\xa5c x</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartxAxisColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                        <td id = "tdChartyAxisColor">M\xc3\xa0u ch\xe1\xbb\x89 s\xe1\xbb\x91 tr\xe1\xbb\xa5c y</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartyAxisColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                        <td id = "tdChartGridLineColor">M\xc3\xa0u \xc4\x91\xc6\xb0\xe1\xbb\x9dng l\xc6\xb0\xe1\xbb\x9bi</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartGridLineColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    </tr>\r
+                                    <tr>\r
+                                        <td id = "tdChartIndexColor">M\xc3\xa0u ch\xe1\xbb\x89 s\xe1\xbb\x91 index</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartIndexColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                        <td id = "tdChartVolColor">M\xc3\xa0u kh\xe1\xbb\x91i l\xc6\xb0\xe1\xbb\xa3ng giao d\xe1\xbb\x8bch</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartVolColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                        <td id = "tdChartRefLineColor">M\xc3\xa0u \xc4\x91\xc6\xb0\xe1\xbb\x9dng gi\xc3\xa1 tham chi\xe1\xba\xbfu</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartRefLineColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                        <td id = "tdChartRefLineLableColor">M\xc3\xa0u gi\xc3\xa1 tham chi\xe1\xba\xbfu</td>\r
+                                        <td align = "left"><input type = "text" id = "txtChartRefLineLableColor" class="color {hash:true, pickerClosable:true}" style = "width: 60px;" /></td>\r
+                                    </tr> \r
+                                </table>\r
+                            </div>\r
+                        </td>\r
+                    </tr>\r
+                    <tr>\r
+                        <td align ="center">\r
+                            <input type ="checkbox" id ="chkIsShowCEFL" />\r
+                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'IsShowCEFL\')"><span id ="Span8">Hi\xe1\xbb\x83n th\xe1\xbb\x8b CE & FL</span></a>\r
+                            <input type ="checkbox" id ="chkIsBidByPriceVol" />\r
+                            <a class="Link" href = "javascript: ShowColumnLinkClick(\'IsBidByPriceVol\')"><span id ="Span9">D\xc6\xb0 mua: Gi\xc3\xa1/Kh\xe1\xbb\x91i l\xc6\xb0\xe1\xbb\xa3ng</span></a>\r
+                        </td>\r
+                    </tr>\r
+                    <tr>\r
+                        <td>\r
+                            <table width="100%" cellpadding="0" cellspacing="1">\r
+                                <tr>\r
+                                    <td align ="left">\r
+                                        <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: SetDefaultColor();">\r
+                                            <span id = "spDefaultColor">\xc4\x90\xe1\xba\xb7t m\xc3\xa0u m\xe1\xba\xb7c \xc4\x91\xe1\xbb\x8bnh</span>\r
+                                        </a>\r
+                                    </td>                                    \r
+                                    <td align ="right">\r
+                                        <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: SaveChooseColor();">\r
+                                            <span id = "spSaveChooseColor">L\xc6\xb0u l\xe1\xba\xa1i</span>\r
+                                        </a>&nbsp&nbsp\r
+                                        <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: CloseChooseColor();">\r
+                                            <span id = "spCloseChooseColor">\xc4\x90\xc3\xb3ng</span>\r
+                                        </a>  \r
+                                    </td>\r
+                                </tr>\r
+                                <tr>\r
+                                    <td align = "left" id = "tdSettingColorString">Cookie m\xc3\xa3 m\xc3\xa0u:</td>\r
+                                    <td align = "left">\r
+                                        <input type = "text" id = "txtSettingColorString" style = "width: 350px;" />\r
+                                        <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: SaveImportColor();">\r
+                                            <span id = "spSaveColorImport">L\xc6\xb0u l\xe1\xba\xa1i Cookie</span>\r
+                                        </a>\r
+                                    </td>\r
+                                </tr>\r
+                                <tr>\r
+                                    <td align = "left" id = "td3">Cookie \xe1\xba\xa9n/hi\xe1\xbb\x87n c\xe1\xbb\x99t:</td>\r
+                                    <td align = "left">\r
+                                        <input type = "text" id = "txtSettingShowColumnString" style = "width: 350px;" />                                        \r
+                                    </td>\r
+                                </tr>\r
+                                <tr>\r
+                                    <td align = "left" id = "td4">Cookie t\xc3\xb9y ch\xe1\xbb\x8dn b\xe1\xba\xa3ng:</td>\r
+                                    <td align = "left">\r
+                                        <input type = "text" id = "txtSettingParaString" style = "width: 350px;" />                                        \r
+                                    </td>\r
+                                </tr>\r
+                            </table>                      \r
+                        </td>\r
+                    </tr>\r
+                </table>\r
+                </div>\r
+                <div id="view2">\r
+                    <table width="100%" cellpadding="1" cellspacing="2">\r
+                        <tr>\r
+                            <td>\r
+                                <span id = "Span1" style = "font-weight: bold">Nh\xe1\xba\xadp m\xc3\xa3 ch\xe1\xbb\xa9ng kho\xc3\xa1n:</span>\r
+                                <input type ="text" id = "txtRemoveSymbol" onkeypress="javascript: onKeyEnterHiddenSymbol();" style = "width: 100px; text-transform:uppercase;" />\r
+                                <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: AddHiddenSymbol();"><span id = "Span2">Th\xc3\xaam M\xc3\xa3 CK</span></a>\r
+                                <a style = "width: 80px;" class ="btn btn-inverse" href = "javascript:RemoveHiddenSymbols();" class="Link"><span id = "Span5">Lo\xe1\xba\xa1i b\xe1\xbb\x8f M\xc3\xa3 CK</span></a>\r
+                            </td>\r
+                        </tr>\r
+                        <tr>\r
+                            <td>\r
+                                <div id = "divHiddenSymbol" class = "ChooseSymbol">\r
+                                    <ul class=\'symbols\' id = \'ulHiddenSymbolList\'></ul>\r
+                                </div>\r
+                            </td>\r
+                        </tr>\r
+                        <tr>\r
+                            <td>\r
+                                <table width="100%" cellpadding="1" cellspacing="2">\r
+                                    <tr>\r
+                                        <td align = "left">\r
+                                            <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: AddHiddenSymbol30();">\r
+                                                <span id = "Span6">Th\xc3\xaam c\xc3\xa1c m\xc3\xa3 CK VN30</span>\r
+                                            </a>&nbsp&nbsp\r
+                                            <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: RemoveHiddenSymbol30();">\r
+                                                <span id = "Span7">Lo\xe1\xba\xa1i c\xc3\xa1c m\xc3\xa3 CK VN30</span>\r
+                                            </a>\r
+                                        </td>\r
+                                        <td align ="right">\r
+                                            <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: SaveChooseColor();">\r
+                                                <span id = "Span3">L\xc6\xb0u l\xe1\xba\xa1i</span>\r
+                                            </a>&nbsp&nbsp\r
+                                            <a style = "width: 50px;" class ="btn btn-inverse" href="javascript: CloseChooseColor();">\r
+                                                <span id = "Span4">\xc4\x90\xc3\xb3ng</span>\r
+                                            </a>\r
+                                        </td>\r
+                                    </tr>\r
+                                </table>\r
+                            </td>                            \r
+                        </tr>\r
+                    </table>\r
+                </div>\r
+            </div>\r
+        </div>\r
+    </div>\r
+    <p id="toTop" style="display: none;">\r
+        <a href="#"><span id="toTopHover" style="opacity: 0;"></span></a>\r
+    </p>\r
+    </center>    \r
+    \r
+    </form>            \r
+    <script type=\'text/javascript\'>\r
+        function showSubMenu() {\r
+            document.getElementById("nav_premiun").className = "item has_dropdown show_sub_menu";\r
+        }\r
+        function hideSubMenu() {\r
+            document.getElementById("nav_premiun").className = "item has_dropdown";\r
+        }\r
+        HoseInitChannel();\r
+    </script>    \r
+</body>\r
+</html>\r
+'
