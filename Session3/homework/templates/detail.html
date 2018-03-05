@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thông tin chi tiết</title>
+  </head>
+  <body>
+    <img src = {{ get_info.image }} >
+    <h2>{{ get_info.name }}</h2>
+    <p><b>Năm sinh:</b> {{ get_info.yob }}</p>
+    <p><b>Giới tính: </b>{{ get_info.gender}}</p>
+    <p><b>Chiều cao:</b> {{ get_info.height }}</p>
+    <p><b>Mô tả:</b> {{ get_info.description }}</p>
+    <p><b>Số đo:</b> {{ get_info.measurements }}</p>
+    <p><b>Điện thoại:</b> {{ get_info.phone }}</p>
+    <p><b>Địa chỉ:</b> {{ get_info.address }}</p>
+    <p><b>Tình trạng:</b> {{ "rảnh" if get_info.status ==True else "bận" }}</p>
+  </body>
+</html>

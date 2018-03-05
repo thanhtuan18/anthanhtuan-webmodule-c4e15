@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+  </head>
+  <body>
+    <p><a href=" {{ url_for("new_service") }} ">Để thêm dữ liệu bấm vào đây</a></p>
+    <table border="1px">
+      <thead>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Năm sinh</th>
+        <th>Giới tính</th>
+        <th></th>
+      </thead>
+      <tbody>
+        {% for service in services %}
+          <tr>
+            <td> {{ loop.index }} </td>
+            <td> {{ service.name }} </td>
+            <td> {{ service.yob }}</td>
+            <td>
+              {{ "Nữ" if service.gender == 0 else "Nam" }}
+            </td>
+            <td>
+              <a href=" {{ url_for("updateservice", id_to_find2 = service.id) }} ">Sửa</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
