@@ -1,0 +1,21 @@
+.text-upper {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-red {
+  color: red;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+  font-weight: bold;
+}
+
+.font-size {
+  font-size: 24px;
+}
+
+.text-italic {
+  font-style: italic;
+}

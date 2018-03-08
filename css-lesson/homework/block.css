@@ -1,0 +1,36 @@
+.body {
+  margin-left: 150px;
+}
+
+.color {
+  color: red;
+}
+
+.d-inline-block {
+  display: inline-block;
+  width: 450px;
+  /* margin-right: 50px; */
+  text-align: left;
+  vertical-align: top;
+}
+
+.font1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.f-size1 {
+  font-size: 28px;
+}
+
+.f-size2 {
+  font-size: 23px;
+}
+
+.inline {
+  display: inline;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 12px;
+}

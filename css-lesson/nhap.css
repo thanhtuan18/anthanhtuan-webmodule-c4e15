@@ -1,0 +1,17 @@
+.item {
+    position: relative;
+    border: 1px solid green;
+    height: 30px;
+}
+
+.item .name {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.item .price {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}

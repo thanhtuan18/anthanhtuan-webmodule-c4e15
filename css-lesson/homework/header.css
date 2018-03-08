@@ -1,0 +1,30 @@
+div div {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.top {
+  font-size: 50px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.nav {
+  border: 1px solid #ccc;
+  text-align: center;
+  border-width: 1px 0;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 0px;
+  padding: 10px;
+  width: 200px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(6, 9, 14);
+}
