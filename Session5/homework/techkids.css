@@ -1,0 +1,82 @@
+.h-500 {
+  height: 500px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.background-img {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81vT4fuKgbXYaxzFDAufDrH0fwJstybIt6eq18Kp_KvEy1e9o");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.transbox {
+  background-color: rgb(10, 8, 11, 0.7);
+  height: inherit;
+  width: inherit;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.background-img2 {
+  background-image: url("https://kenh14cdn.com/2017/1-1506422137960.jpg");
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 360px;
+}
+
+.background-img3 {
+  background-image: url("https://znews-photo-td.zadn.vn/w860/Uploaded/neg_rtlzofn/2017_01_23/14494601_177404746951l3484_2482115257403382069_n.jpg");
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 360px;
+}
+
+.background-img4 {
+  background-image: url("https://kenh14cdn.com/2017/15740896-1813351005583130-3925373141968968477-n-1486202971835.jpg");
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 360px;
+}
+
+.background-img5 {
+  background-image: url("https://i.ytimg.com/vi/32y3RoWtmVE/maxresdefault.jpg");
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 360px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex2 {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.ca_si {
+  padding-top: 20px;
+  width: 200px;
+  text-align: center;
+  border-top: 2px solid white;
+  text-transform: uppercase;
+  color: white;
+}

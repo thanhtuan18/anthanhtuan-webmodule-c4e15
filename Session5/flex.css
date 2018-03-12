@@ -1,0 +1,32 @@
+.d-flex {
+  display: flex;
+  background: #ccc;
+  padding: 10px;
+  flex-flow: row wrap;
+  /* justify-content: space-between; */
+  height: 500px;
+  /* align-items: Started; */
+  align-content: space-between;
+}
+/* wrap de cho tat ca vao 1 hang */
+
+.h-80px {
+  height: 80px;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.w-80px {
+   width: 80px;
+ }
+
+.bg-green {
+  background: green;
+}
+
+.mx-10px {
+  margin: 0 10px;
+}

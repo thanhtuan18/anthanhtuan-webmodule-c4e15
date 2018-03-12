@@ -1,5 +1,5 @@
 .box-color {
-  border: 10px solid none;
+  border: 10px solid transparent;
   width: 500px;
   height: 500px;
   background-color: rgb(29, 130, 42);
